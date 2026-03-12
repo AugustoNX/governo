@@ -1,1 +1,200 @@
-testeOUHSFEBu9wybfe
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Intimação Oficial</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#f5f5f5;
+    font-family:"Times New Roman", serif;
+}
+
+.container{
+    max-width:480px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    box-shadow:0 0 12px rgba(0,0,0,0.2);
+}
+
+.header{
+    text-align:center;
+}
+
+.logo{
+    width:70px;
+}
+
+h1{
+    font-size:22px;
+    margin-top:10px;
+}
+
+.sub{
+    font-size:13px;
+    color:#444;
+}
+
+.texto{
+    margin-top:20px;
+    line-height:1.6;
+    font-size:16px;
+}
+
+.opcao{
+    border:1px solid #aaa;
+    padding:12px;
+    margin-top:15px;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:15px;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.assinatura{
+    margin-top:25px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.resultado{
+    text-align:center;
+    margin-top:20px;
+}
+
+.carimbo{
+    margin-top:15px;
+    font-size:22px;
+    color:red;
+    border:3px solid red;
+    display:inline-block;
+    padding:10px;
+    transform:rotate(-12deg);
+    opacity:0;
+}
+
+.show{
+    opacity:1;
+}
+
+.footer{
+    margin-top:25px;
+    font-size:12px;
+    text-align:center;
+    color:#555;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Scales_of_Justice.svg/1024px-Scales_of_Justice.svg.png">
+
+<h1>INTIMAÇÃO PARA COMPARECIMENTO</h1>
+
+<div class="sub">
+Departamento de Convites Especiais<br>
+Seção de Encontros Possivelmente Memoráveis
+</div>
+
+</div>
+
+<div class="texto">
+
+Fica a Sr(a). <b>Maria Júlia</b> formalmente intimada a comparecer em um encontro de natureza gastronômica, cordial e potencialmente divertido, na companhia do intimador responsável por este documento.
+
+Nos termos desta notificação, o transporte será devidamente providenciado, sendo realizada a coleta da intimada às <b>19:00</b>, diretamente em seu local de residência.
+
+Para cumprimento desta determinação social, solicita-se a escolha de um dos estabelecimentos abaixo indicados.
+
+</div>
+
+<div class="opcao">
+📍 Armazen Restaurante<br>
+🕒 Coleta às 19:00
+<button onclick="aceitar('Armazen Restaurante')">Selecionar esta opção</button>
+</div>
+
+<div class="opcao">
+📍 Barolo<br>
+🕒 Coleta às 19:00
+<button onclick="aceitar('Barolo')">Selecionar esta opção</button>
+</div>
+
+<div class="opcao">
+📍 Mannaia Bar<br>
+🕒 Coleta às 19:00
+<button onclick="aceitar('Mannaia Bar')">Selecionar esta opção</button>
+</div>
+
+<div class="assinatura">
+
+<label>Assinatura da intimada:</label>
+<input id="nome" placeholder="Maria Júlia">
+
+</div>
+
+<div class="resultado" id="resultado"></div>
+
+<div class="footer">
+
+Art. 1º – O não comparecimento poderá resultar em novas tentativas de convite.<br>
+Art. 2º – A intimada deverá comparecer munida de bom humor.<br>
+Art. 3º – Esta intimação possui validade imediata.
+
+</div>
+
+</div>
+
+<script>
+
+function aceitar(local){
+
+let nome = document.getElementById("nome").value
+
+if(nome === ""){
+alert("Para aceitar a intimação é necessário assinar o documento.")
+return
+}
+
+document.getElementById("resultado").innerHTML = `
+<p><b>${nome}</b> aceitou a intimação.</p>
+<p>Local escolhido: <b>${local}</b></p>
+<p>Horário de coleta: <b>19:00</b></p>
+<div class="carimbo show">INTIMAÇÃO ACEITA</div>
+`
+
+}
+
+</script>
+
+</body>
+</html>
