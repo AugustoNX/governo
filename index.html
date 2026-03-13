@@ -131,9 +131,11 @@ seção de encontros possivelmente memoráveis
 
 Fica a Sr(a). Maria Júlia formalmente intimada a comparecer em um encontro de natureza gastronômica, cordial e potencialmente divertido, na companhia do intimador responsável por este documento.
 
-Nos termos desta notificação, o transporte será devidamente providenciado, sendo realizada a coleta da intimada às <b>19:00</b>, diretamente em seu local de residência.
+Antes da execução desta diligência social, solicita-se que a intimada informe qual o melhor dia da semana em que estará disponível para um encontro noturno.
 
-Para cumprimento desta determinação social, solicita-se a escolha de um dos estabelecimentos abaixo indicados.
+Nos termos desta notificação, o transporte será devidamente providenciado, sendo realizada a coleta da intimada às <b>19:00</b>, diretamente em seu local de residência, na data que vier a ser acordada entre as partes.
+
+Para cumprimento desta determinação social, solicita-se também a escolha de um dos estabelecimentos abaixo indicados.
 
 </div>
 
@@ -157,6 +159,16 @@ Para cumprimento desta determinação social, solicita-se a escolha de um dos es
 
 <div class="assinatura">
 
+<label>Melhor dia para cumprimento desta intimação:</label>
+<input id="dia" placeholder="Ex: Sexta-feira">
+
+<label style="margin-top:15px;">Assinatura da intimada:</label>
+<input id="nome" placeholder="Maria Júlia">
+
+</div>
+
+<div class="assinatura">
+
 <label>Assinatura da intimada:</label>
 <input id="nome" placeholder="Maria Júlia">
 
@@ -167,8 +179,8 @@ Para cumprimento desta determinação social, solicita-se a escolha de um dos es
 <div class="footer">
 
 Art. 1º – O não comparecimento poderá resultar em novas tentativas de convite.<br>
-Art. 2º – A intimada deverá comparecer munida de bom humor.<br>
-Art. 3º – Esta intimação possui validade imediata.
+Art. 2º – A intimada deverá comparecer munida de bom humor e disposição para conversas agradáveis.<br>
+Art. 3º – Após a escolha do restaurante e do melhor dia, esta intimação passa a ter efeito imediato.
 
 </div>
 
@@ -179,26 +191,33 @@ Art. 3º – Esta intimação possui validade imediata.
 function aceitar(local){
 
 let nome = document.getElementById("nome").value
+let dia = document.getElementById("dia").value
 
 if(nome === ""){
 alert("Para aceitar a intimação é necessário assinar o documento.")
 return
 }
 
+if(dia === ""){
+alert("Informe também o melhor dia para o encontro.")
+return
+}
+
 document.getElementById("resultado").innerHTML = `
 <p><b>${nome}</b> aceitou a intimação.</p>
+<p>Dia sugerido: <b>${dia}</b></p>
 <p>Local escolhido: <b>${local}</b></p>
 <p>Horário de coleta: <b>19:00</b></p>
+<p>Favor enviar um print ao intimador.</p>
 <div class="carimbo show">INTIMAÇÃO ACEITA</div>
-<p>Favor enviar um print ao intimador
 `
-
 }
 
 </script>
 
 </body>
 </html>
+
 
 
 
