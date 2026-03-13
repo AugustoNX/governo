@@ -9,102 +9,131 @@
 <style>
 
 body{
-    margin:0;
-    background:#f5f5f5;
-    font-family:"Times New Roman", serif;
+margin:0;
+background:#f5f5f5;
+font-family:"Times New Roman", serif;
 }
 
 .container{
-    max-width:480px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    box-shadow:0 0 12px rgba(0,0,0,0.2);
+max-width:480px;
+margin:auto;
+background:white;
+padding:25px;
+box-shadow:0 0 12px rgba(0,0,0,0.2);
 }
 
 .header{
-    text-align:center;
+text-align:center;
 }
 
 .logo{
-    width:70px;
+width:70px;
 }
 
 h1{
-    font-size:22px;
-    margin-top:10px;
+font-size:22px;
+margin-top:10px;
+}
+
+.processo{
+margin-top:5px;
+font-size:13px;
+font-weight:bold;
 }
 
 .sub{
-    font-size:13px;
-    color:#444;
+font-size:13px;
+color:#444;
+margin-top:6px;
 }
 
 .texto{
-    margin-top:20px;
-    line-height:1.6;
-    font-size:16px;
+margin-top:20px;
+line-height:1.6;
+font-size:16px;
 }
 
 .opcao{
-    border:1px solid #aaa;
-    padding:12px;
-    margin-top:15px;
-    border-radius:6px;
+border:1px solid #aaa;
+padding:12px;
+margin-top:15px;
+border-radius:6px;
 }
 
 button{
-    width:100%;
-    margin-top:10px;
-    padding:10px;
-    background:black;
-    color:white;
-    border:none;
-    border-radius:5px;
-    font-size:15px;
+width:100%;
+margin-top:10px;
+padding:10px;
+background:black;
+color:white;
+border:none;
+border-radius:5px;
+font-size:15px;
 }
 
 button:hover{
-    opacity:0.9;
+opacity:0.9;
 }
 
 .assinatura{
-    margin-top:25px;
+margin-top:25px;
 }
 
 input{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:5px;
+width:100%;
+padding:10px;
+margin-top:6px;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 .resultado{
-    text-align:center;
-    margin-top:20px;
+text-align:center;
+margin-top:20px;
+min-height:100px;
 }
 
 .carimbo{
-    margin-top:15px;
-    font-size:22px;
-    color:red;
-    border:3px solid red;
-    display:inline-block;
-    padding:10px;
-    transform:rotate(-12deg);
-    opacity:0;
+margin-top:20px;
+font-size:24px;
+color:red;
+border:4px solid red;
+display:inline-block;
+padding:12px 18px;
+transform:rotate(-12deg) scale(0);
+opacity:0;
+font-weight:bold;
 }
 
-.show{
-    opacity:1;
+.carimbo.ativo{
+animation:carimbar 0.6s forwards;
+}
+
+@keyframes carimbar{
+
+0%{
+transform:rotate(-12deg) scale(3);
+opacity:0;
+}
+
+60%{
+transform:rotate(-12deg) scale(0.8);
+opacity:1;
+}
+
+100%{
+transform:rotate(-12deg) scale(1);
+opacity:1;
+}
+
 }
 
 .footer{
-    margin-top:25px;
-    font-size:12px;
-    text-align:center;
-    color:#555;
+margin-top:25px;
+font-size:12px;
+text-align:center;
+color:#555;
+line-height:1.5;
 }
 
 </style>
@@ -116,20 +145,24 @@ input{
 
 <div class="header">
 
-<img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9jWcyBjkgK-d1CGd3K-UHkM4mE7uo0K4_A&s">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Scales_of_Justice.svg/1024px-Scales_of_Justice.svg.png">
 
 <h1>INTIMAÇÃO PARA COMPARECIMENTO</h1>
 
+<div class="processo">
+Processo nº MJ-2026-001
+</div>
+
 <div class="sub">
-Departamento de convites especiais<br>
-seção de encontros possivelmente memoráveis
+Tribunal do Primeiro Encontro<br>
+1ª Vara dos Convites Especiais
 </div>
 
 </div>
 
 <div class="texto">
 
-Fica a Sr(a). Maria Júlia formalmente intimada a comparecer em um encontro de natureza gastronômica, cordial e potencialmente divertido, na companhia do intimador responsável por este documento.
+Fica a Sr(a). <b>Maria Júlia</b> formalmente intimada a comparecer em um encontro de natureza gastronômica, cordial e potencialmente divertido, na companhia do intimador responsável por este documento.
 
 Antes da execução desta diligência social, solicita-se que a intimada informe qual o melhor dia da semana em que estará disponível para um encontro noturno.
 
@@ -141,19 +174,19 @@ Para cumprimento desta determinação social, solicita-se também a escolha de u
 
 <div class="opcao">
 📍 Armazen Restaurante<br>
-🕒 Às 19:30
+🕒 Coleta às 19:00
 <button onclick="aceitar('Armazen Restaurante')">Selecionar esta opção</button>
 </div>
 
 <div class="opcao">
 📍 Barolo<br>
-🕒 Às 19:30
+🕒 Coleta às 19:00
 <button onclick="aceitar('Barolo')">Selecionar esta opção</button>
 </div>
 
 <div class="opcao">
 📍 Mannaia Bar<br>
-🕒 Às 19:30
+🕒 Coleta às 19:00
 <button onclick="aceitar('Mannaia Bar')">Selecionar esta opção</button>
 </div>
 
@@ -162,12 +195,8 @@ Para cumprimento desta determinação social, solicita-se também a escolha de u
 <label>Melhor dia para cumprimento desta intimação:</label>
 <input id="dia" placeholder="Ex: Sexta-feira">
 
-</div>
-
-<div class="assinatura">
-
-<label>Assinatura da intimada:</label>
-<input id="nome" placeholder="Nome">
+<label style="margin-top:15px;">Assinatura da intimada:</label>
+<input id="nome" placeholder="Maria Júlia">
 
 </div>
 
@@ -176,7 +205,7 @@ Para cumprimento desta determinação social, solicita-se também a escolha de u
 <div class="footer">
 
 Art. 1º – O não comparecimento poderá resultar em novas tentativas de convite.<br>
-Art. 2º – A intimada deverá comparecer munida de bom humor e disposição para conversas agradáveis.<br>
+Art. 2º – A intimada deverá comparecer munida de bom humor e disposição para boas conversas.<br>
 Art. 3º – Após a escolha do restaurante e do melhor dia, esta intimação passa a ter efeito imediato.
 
 </div>
@@ -206,18 +235,12 @@ document.getElementById("resultado").innerHTML = `
 <p>Local escolhido: <b>${local}</b></p>
 <p>Horário de coleta: <b>19:00</b></p>
 <p>Favor enviar um print ao intimador.</p>
-<div class="carimbo show">INTIMAÇÃO ACEITA</div>
+<div class="carimbo ativo">INTIMAÇÃO ACEITA</div>
 `
+
 }
 
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
